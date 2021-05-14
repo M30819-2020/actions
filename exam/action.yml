@@ -3,7 +3,7 @@ runs:
    
   #
   steps:
-    - name : fred
+      #- name : fred
       #uses: actions/checkout@v2
     - id: random-number-generator      
       #run: echo "::set-output name=random-id::$(echo $RANDOM)"

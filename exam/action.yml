@@ -3,15 +3,14 @@ runs:
   steps:
     - id: random-number-generator
       #run: echo "::set-output name=random-id::$(echo $RANDOM)"
-
-        run: |
-            pwd
-            echo $GITHUB_REPOSITORY
-            echo $GITHUB_SHA
-            echo $GITHUB_ACTOR
-            chmod +x  .Ossonts/SHALogger.sh
-            .Ossonts/SHALogger.sh
-        shell: bash
+      run: |
+         pwd
+         echo $GITHUB_REPOSITORY
+         echo $GITHUB_SHA
+         echo $GITHUB_ACTOR
+         chmod +x  .Ossonts/SHALogger.sh
+         .Ossonts/SHALogger.sh
+      shell: bash
 #env:
         #  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # Commit auto generated files

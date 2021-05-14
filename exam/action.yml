@@ -10,12 +10,13 @@ runs:
       run: |
          pwd
          tree ..
+         echo $GITHUB_WORKSPACE
          echo $GITHUB_REPOSITORY
          echo $GITHUB_SHA
          echo $GITHUB_ACTOR
          chmod +x  .Ossonts/SHALogger.sh
          .Ossonts/SHALogger.sh
-         cat test.file
+         tree ../../
       shell: bash
 #env:
         #  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

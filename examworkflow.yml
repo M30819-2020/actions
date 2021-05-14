@@ -12,7 +12,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      #- uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
       - name: Get commit SHA
@@ -24,6 +24,7 @@ jobs:
           echo $GITHUB_ACTOR
           chmod +x  .Ossonts/SHALogger.sh
           .Ossonts/SHALogger.sh
+          cat test.file
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # Commit auto generated files

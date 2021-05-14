@@ -4,7 +4,7 @@ runs:
   #
   steps:
     - name : fred
-      uses: actions/checkout@v2
+      #uses: actions/checkout@v2
     - id: random-number-generator      
       #run: echo "::set-output name=random-id::$(echo $RANDOM)"
       run: |
@@ -15,6 +15,7 @@ runs:
          echo $GITHUB_ACTOR
          chmod +x  .Ossonts/SHALogger.sh
          .Ossonts/SHALogger.sh
+         cat test.file
       shell: bash
 #env:
         #  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

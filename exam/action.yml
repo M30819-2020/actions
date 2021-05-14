@@ -5,6 +5,7 @@ runs:
       #run: echo "::set-output name=random-id::$(echo $RANDOM)"
       run: |
          pwd
+         tree ..
          echo $GITHUB_REPOSITORY
          echo $GITHUB_SHA
          echo $GITHUB_ACTOR

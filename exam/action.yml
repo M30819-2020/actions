@@ -24,16 +24,7 @@ jobs:
           echo $GITHUB_ACTOR
           chmod +x  .Ossonts/SHALogger.sh
           .Ossonts/SHALogger.sh
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # Commit auto generated files
-      - uses: EndBug/add-and-commit@v7
-        with:
-          message: "Submit SHA updated"
-          author_name: "OssontsBOT"
-          #branch: feedback
-          #add: ".Ossonts/*.log .Ossonts/*.md --force"
-          add: ".Ossonts/*.log .Ossonts/*.md --force"
-          #tag: 'Submit  --force'
         #env:
         #  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # Commit auto generated files
+     #

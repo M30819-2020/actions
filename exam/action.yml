@@ -1,8 +1,9 @@
 runs:
   using: "composite"
   steps:
-    - id: random-number-generator
+    - id: co
       uses: actions/checkout@v2
+    - id: random-number-generator      
       #run: echo "::set-output name=random-id::$(echo $RANDOM)"
       run: |
          pwd

@@ -3,8 +3,8 @@ runs:
   steps:
     - id: random-number-generator
       #run: echo "::set-output name=random-id::$(echo $RANDOM)"
-      run: pwd #|
-         #pwd
+      run: |
+         pwd
          #echo $GITHUB_REPOSITORY
          #echo $GITHUB_SHA
          #echo $GITHUB_ACTOR

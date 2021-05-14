@@ -35,57 +35,5 @@ jobs:
           #add: ".Ossonts/*.log .Ossonts/*.md --force"
           add: ".Ossonts/*.log .Ossonts/*.md --force"
           #tag: 'Submit  --force'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  Markdown-Link:
-    runs-on: ubuntu-20.04
-    steps:
-    - uses: actions/checkout@master
-    - uses: gaurav-nelson/github-action-markdown-link-check@v1
-
-  Markdown-Linter:
-    runs-on: ubuntu-20.04
-    steps:
-    - uses: actions/checkout@master
-    - name: markdownlint-cli
-      uses: nosborn/github-action-markdown-cli@v1.1.1
-      with:
-        files: "*.md"
-
-  PandocGenerator:
-    needs: [SHALogger]
-    #runs-on: ubuntu-20.04
-    runs-on: [self-hosted, linux, x64,L1]
-    #container: ossonts/setap:latest # Beware of versioning here DOCKERHUB
-    container: ghcr.io/m30819-2020/setapdocker   # Beware of versioning here GITHUB -- Some kind of magic here
-    #runs-on: [self-hosted, linux, x64]
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: Make Submit folder if needed
-        run: |
-           mkdir -p Submit
-
-      - name: Find .md files
-        run: |
-          pwd
-          echo "Files and order:"
-          cat .pandoc.yml
-          tree
-          cat  .Ossonts/pandoc.yml
-
-      - name: Make PDF
-        run: |
-          pandoc --verbose --defaults=.pandoc.yml --defaults=.Ossonts/pandoc.yml
-
-      - name: Commit PDF back to repo
-        uses: EndBug/add-and-commit@v7
-        with:
-          message: "Pandoc PDF"
-          author_name: "OssontsBOT"
-          add:  "Submit/*.pdf"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        #env:
+        #  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

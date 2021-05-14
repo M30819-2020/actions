@@ -1,6 +1,4 @@
-- name: Get commit SHA
-
-  run: |
+runs: |
     pwd
     echo $GITHUB_REPOSITORY
     echo $GITHUB_SHA

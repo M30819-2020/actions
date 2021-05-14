@@ -2,7 +2,7 @@ runs:
   using: "composite"
   steps:
     - id: co
-      uses: actions/checkout@v2
+      using: actions/checkout@v2
     - id: random-number-generator      
       #run: echo "::set-output name=random-id::$(echo $RANDOM)"
       run: |
